@@ -18,17 +18,17 @@
                         sans: ['Inter', 'system-ui', 'sans-serif'],
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
-                        'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                         'blob': 'blob 7s infinite',
                     },
                     keyframes: {
                         fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '0%': { opacity: '0', transform: 'translateY(15px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         },
                         fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         },
                         blob: {
@@ -54,6 +54,7 @@
         .hidden-section {
             display: none !important;
         }
+        /* Padrões de Fundo */
         .bg-pattern {
             background-image: radial-gradient(rgba(16, 185, 129, 0.15) 2px, transparent 2px);
             background-size: 30px 30px;
@@ -64,30 +65,28 @@
         .animation-delay-2000 { animation-delay: 2s; }
         .animation-delay-4000 { animation-delay: 4s; }
 
-        /* Definição nativa da animação de preenchimento para garantir execução */
+        /* Animação para barras de gráficos */
         @keyframes fillBar {
             0% { width: 0%; }
             100% { width: var(--target-width); }
         }
-
-        /* Classe para animação das barras de gráfico */
         .bar-animate {
             width: 0%;
-            animation: fillBar 1.5s ease-out 0.5s forwards;
+            animation: fillBar 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
         }
     </style>
 </head>
-<body class="min-h-screen text-gray-800 dark:text-gray-200 transition-colors duration-300 relative">
+<body class="min-h-screen text-gray-800 dark:text-gray-200 transition-colors duration-300 relative selection:bg-emerald-200 selection:text-emerald-900">
 
     <!-- FUNDO DIVERTIDO E MODERNO -->
     <div class="fixed inset-0 z-[-1] overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-colors duration-300">
         <div class="bg-pattern absolute inset-0"></div>
-        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-emerald-300 dark:bg-emerald-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 dark:opacity-20 animate-blob"></div>
-        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-purple-300 dark:bg-purple-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 dark:opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-blue-300 dark:bg-blue-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 dark:opacity-20 animate-blob animation-delay-4000"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-emerald-300 dark:bg-emerald-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[100px] opacity-40 dark:opacity-20 animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-purple-300 dark:bg-purple-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[100px] opacity-40 dark:opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-[500px] h-[500px] bg-blue-300 dark:bg-blue-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[100px] opacity-40 dark:opacity-20 animate-blob animation-delay-4000"></div>
     </div>
 
-    <!-- HEADER -->
+    <!-- HEADER / MENU -->
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-gray-900/70 border-b border-white/20 dark:border-gray-800/50 shadow-sm transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition hover:scale-105 duration-200" onclick="navigateTo('home')">
@@ -112,9 +111,11 @@
     </header>
 
     <!-- CONTEÚDO PRINCIPAL -->
-    <main class="max-w-5xl mx-auto px-4 py-8 md:py-12">
+    <main class="max-w-5xl mx-auto px-4 py-8 md:py-12 min-h-[80vh]">
 
+        <!-- ========================================== -->
         <!-- SECÇÃO: HOME -->
+        <!-- ========================================== -->
         <section id="view-home" class="space-y-12 animate-fade-in">
             <div class="text-center space-y-6">
                 <div class="inline-block p-3 bg-emerald-100 dark:bg-emerald-900/50 rounded-full mb-2 animate-bounce">
@@ -137,38 +138,38 @@
                 </h2>
                 <div class="space-y-4 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
                     <p>
-                        Estamos diante de um dos maiores desafios da atualidade: os <strong>REEE</strong> (Resíduos de Equipamentos Eletroeletrônicos). O mundo produziu o recorde de <strong>62 milhões de toneladas</strong> em 2022 (ONU, 2024). Em vez de poluição, este material é uma verdadeira <span class="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 px-1 rounded font-semibold">"mina urbana"</span>.
+                        O mundo produziu <strong>62 milhões de toneladas</strong> de Resíduos de Equipamentos Eletroeletrônicos (REEE) em 2022, com previsão de chegar a 82 milhões até 2030 (ONU, 2024). Em vez de poluição, este material deve ser encarado como uma verdadeira <span class="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 px-1 rounded font-semibold">"mina urbana"</span>.
                     </p>
                     <p>
-                        Nesta página, convidamo-lo a explorar como as Políticas Públicas, o Empreendedorismo Verde e as Tecnologias Sustentáveis se conectam para criar a Economia Circular do amanhã.
+                        Nesta plataforma, convidamos você a explorar como as <strong>Tecnologias Sustentáveis</strong>, o <strong>Empreendedorismo Verde</strong> e as <strong>Políticas Públicas</strong> se conectam para criar a Economia Circular do amanhã.
                     </p>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 pt-4">
-                <!-- CARD TEMA 4: Tecnologias Sustentáveis -->
+                <!-- CARD TEMA 4 -->
                 <button onclick="navigateTo('tema4')" class="group relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/50 dark:border-gray-700/50 text-left overflow-hidden cursor-pointer flex flex-col h-full">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-purple-200/50 dark:bg-purple-800/30 rounded-bl-full transition-transform group-hover:scale-110"></div>
                     <div class="relative z-10 flex-grow">
                         <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/50 rounded-2xl flex items-center justify-center mb-6 shadow-inner"><i data-lucide="microchip" class="w-8 h-8 text-purple-600 dark:text-purple-400"></i></div>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Tecnologias Sustentáveis</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm">Como Química Verde, robótica e biometalurgia extraem materiais valiosos sem destruir o planeta.</p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm">Como IA, robótica, química verde e biometalurgia extraem materiais valiosos sem destruir o planeta.</p>
                     </div>
                     <div class="flex items-center text-purple-600 dark:text-purple-400 font-bold group-hover:translate-x-2 transition-transform mt-auto">Acessar Tema 4 <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i></div>
                 </button>
 
-                <!-- CARD TEMA 5: Empreendedorismo Verde -->
-                <button onclick="navigateTo('tema5')" class="group relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/50 dark:border-gray-700/50 text-left overflow-hidden cursor-pointer flex flex-col h-full">
+                <!-- CARD TEMA 5 -->
+                <button onclick="navigateTo('tema5')" class="group relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/50 dark:border-gray-700/50 text-left overflow-hidden cursor-pointer flex flex-col h-full ring-2 ring-transparent hover:ring-emerald-400/50">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-200/50 dark:bg-emerald-800/30 rounded-bl-full transition-transform group-hover:scale-110"></div>
                     <div class="relative z-10 flex-grow">
                         <div class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/50 rounded-2xl flex items-center justify-center mb-6 shadow-inner"><i data-lucide="leaf" class="w-8 h-8 text-emerald-600 dark:text-emerald-400"></i></div>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Empreendedorismo Verde</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm">Modelos de negócios inovadores, cooperativas de sucesso e startups focadas na economia circular.</p>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm">Modelos de negócios inovadores, inclusão social produtiva, cooperativas e governança (ESG).</p>
                     </div>
                     <div class="flex items-center text-emerald-600 dark:text-emerald-400 font-bold group-hover:translate-x-2 transition-transform mt-auto">Acessar Tema 5 <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i></div>
                 </button>
 
-                <!-- CARD TEMA 6: Políticas e Leis -->
+                <!-- CARD TEMA 6 -->
                 <button onclick="navigateTo('tema6')" class="group relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/50 dark:border-gray-700/50 text-left overflow-hidden cursor-pointer flex flex-col h-full">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-blue-200/50 dark:bg-blue-800/30 rounded-bl-full transition-transform group-hover:scale-110"></div>
                     <div class="relative z-10 flex-grow">
@@ -181,7 +182,9 @@
             </div>
         </section>
 
-        <!-- SECÇÃO: TEMA 4 (Tecnologias Sustentáveis) - COMPLETAMENTE ENRIQUECIDO -->
+        <!-- ========================================== -->
+        <!-- SECÇÃO: TEMA 4 (TECNOLOGIAS SUSTENTÁVEIS)  -->
+        <!-- ========================================== -->
         <section id="view-tema4" class="hidden-section space-y-8 animate-fade-in max-w-5xl mx-auto">
             <button onclick="navigateTo('home')" class="flex items-center text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors mb-2 bg-white/50 dark:bg-gray-800/50 py-2 px-4 rounded-full shadow-sm w-max backdrop-blur-md">
                 <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Voltar para a Síntese Inicial
@@ -218,7 +221,7 @@
                     <div class="p-2 bg-purple-100 dark:bg-purple-900/50 rounded-lg"><i data-lucide="target" class="text-purple-600 dark:text-purple-400 w-6 h-6"></i></div>
                     A Tríade dos Motivadores para a Reciclagem
                 </h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">A adoção urgente de tecnologias de reciclagem avançadas não é apenas uma questão ambiental, mas também econômica e de segurança da informação. Segundo a ONU (Global E-waste Monitor, 2024), <strong>apenas 22,3% do lixo eletrônico mundial é reciclado formalmente.</strong> O restante representa as seguintes oportunidades e riscos:</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg">A adoção urgente de tecnologias de reciclagem avançadas não é apenas uma questão ambiental, mas também econômica e de segurança da informação. O desperdício atual representa as seguintes oportunidades e riscos:</p>
 
                 <div class="grid md:grid-cols-3 gap-6 mb-12">
                     <div class="bg-red-50 dark:bg-red-900/10 p-6 rounded-2xl border border-red-100 dark:border-red-900/30 shadow-sm transition hover:shadow-md hover:-translate-y-1 duration-300">
@@ -286,7 +289,7 @@
                     <div class="flex flex-col md:flex-row gap-6 items-start bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-purple-100 dark:border-purple-900/50">
                         <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-full shrink-0"><i data-lucide="settings" class="w-8 h-8 text-gray-600 dark:text-gray-300"></i></div>
                         <div>
-                            <h4 class="font-bold text-xl text-gray-900 dark:text-white mb-2">1. Desmontagem e Separação Físico-Mecânica (Com Robótica)</h4>
+                            <h4 class="font-bold text-xl text-gray-900 dark:text-white mb-2">1. Desmontagem e Separação Físico-Mecânica</h4>
                             <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-2">
                                 <strong>Como funciona:</strong> Braços robóticos equipados com câmeras e IA (sensores NIR e XRF) separam componentes velozmente. Aparelhos são triturados; utiliza-se separação magnética (para atrair ferro), correntes de Foucault (para expulsar alumínio e cobre) e peneiramento a ar.
                             </p>
@@ -329,8 +332,11 @@
                         <div class="bg-orange-50 dark:bg-orange-900/30 p-4 rounded-full shrink-0"><i data-lucide="flame" class="w-8 h-8 text-orange-500"></i></div>
                         <div>
                             <h4 class="font-bold text-xl text-gray-900 dark:text-white mb-2">4. Pirólise de Baixa Emissão</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-2">
+                                <strong>Como funciona:</strong> Em vez de incinerar plásticos (o que geraria fumaça tóxica com dioxinas), a pirólise aquece o material <em>sem oxigênio</em> em reatores fechados, derretendo os polímeros sem queimar.
+                            </p>
                             <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                                <strong>Como funciona e o que extrai:</strong> Em vez de incinerar plásticos (o que geraria dioxinas cancerígenas), a pirólise aquece o material <em>sem oxigênio</em>. Os plásticos derretem e se transformam em óleos combustíveis, enquanto os metais atrelados a eles ficam limpos e prontos para uso industrial.
+                                <strong>O que explora:</strong> Transforma os plásticos inúteis em óleos combustíveis e gases para geração de energia, enquanto deixa os metais intactos, limpos e prontos para uso industrial seguro.
                             </p>
                         </div>
                     </div>
@@ -357,42 +363,10 @@
                     </ul>
                 </div>
 
-                <!-- 5. IMPACTO SOCIAL & EMPREGOS VERDES -->
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-6 flex items-center gap-3">
-                    <div class="p-2 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg"><i data-lucide="users" class="text-emerald-600 dark:text-emerald-400 w-6 h-6"></i></div>
-                    Impacto Social: A Cadeia de "Empregos Verdes"
-                </h3>
-                <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    A reciclagem de lixo eletrônico no Sul Global, incluindo o Brasil, foi historicamente marcada pelo trabalho informal em lixões, com catadores inalando vapores tóxicos (Dias, 2016). O advento dessas tecnologias sustentáveis catalisou a formalização do setor, criando uma longa e próspera cadeia de empregos.
-                </p>
-
-                <div class="flex flex-col md:flex-row gap-4 justify-between items-stretch mb-12">
-                    <!-- Step 1 -->
-                    <div class="flex-1 bg-white dark:bg-gray-800 p-5 rounded-2xl border-t-4 border-emerald-500 shadow-md text-center">
-                        <div class="mx-auto bg-emerald-100 dark:bg-emerald-900/50 w-12 h-12 flex items-center justify-center rounded-full mb-3"><i data-lucide="truck" class="text-emerald-600 dark:text-emerald-400"></i></div>
-                        <h5 class="font-bold text-gray-900 dark:text-white mb-2">Logística Reversa</h5>
-                        <p class="text-xs text-gray-600 dark:text-gray-400">Catadores outrora informais são contratados por cooperativas (PEVs) com direitos garantidos e segurança.</p>
-                    </div>
-                    <div class="hidden md:flex items-center text-emerald-300"><i data-lucide="arrow-right" class="w-6 h-6"></i></div>
-                    <!-- Step 2 -->
-                    <div class="flex-1 bg-white dark:bg-gray-800 p-5 rounded-2xl border-t-4 border-purple-500 shadow-md text-center">
-                        <div class="mx-auto bg-purple-100 dark:bg-purple-900/50 w-12 h-12 flex items-center justify-center rounded-full mb-3"><i data-lucide="wrench" class="text-purple-600 dark:text-purple-400"></i></div>
-                        <h5 class="font-bold text-gray-900 dark:text-white mb-2">Triagem e Conserto</h5>
-                        <p class="text-xs text-gray-600 dark:text-gray-400">Técnicos em eletrônica realizam testes de funcionalidade. O que pode ser salvo gera acesso digital a classes baixas.</p>
-                    </div>
-                    <div class="hidden md:flex items-center text-purple-300"><i data-lucide="arrow-right" class="w-6 h-6"></i></div>
-                    <!-- Step 3 -->
-                    <div class="flex-1 bg-white dark:bg-gray-800 p-5 rounded-2xl border-t-4 border-blue-500 shadow-md text-center">
-                        <div class="mx-auto bg-blue-100 dark:bg-blue-900/50 w-12 h-12 flex items-center justify-center rounded-full mb-3"><i data-lucide="microscope" class="text-blue-600 dark:text-blue-400"></i></div>
-                        <h5 class="font-bold text-gray-900 dark:text-white mb-2">Alta Tecnologia</h5>
-                        <p class="text-xs text-gray-600 dark:text-gray-400">As refinarias finais empregam biólogos, químicos e engenheiros para a extração do ouro e terras raras.</p>
-                    </div>
-                </div>
-
-                <!-- 6. REFERÊNCIAS EXTERNAS -->
+                <!-- REFERÊNCIAS EXTERNAS TEMA 4 -->
                 <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
                     <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-                        <i data-lucide="external-link" class="w-5 h-5 text-gray-500"></i> Continue Explorando o Tema (Referências)
+                        <i data-lucide="external-link" class="w-5 h-5 text-gray-500"></i> Continue Explorando o Tema
                     </h4>
                     <div class="grid md:grid-cols-2 gap-4">
                         <a href="https://ewastemonitor.info/the-global-e-waste-monitor-2024/" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 group hover:border-blue-400 dark:hover:border-blue-500">
@@ -409,13 +383,6 @@
                                 <span class="text-xs text-gray-500">The Lancet Global Health. Revisão sistemática sobre os perigos da exposição informal ao e-lixo.</span>
                             </div>
                         </a>
-                        <a href="https://journals.sagepub.com/home/eau" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 group hover:border-emerald-400 dark:hover:border-emerald-500">
-                            <div class="bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded-lg group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/40 transition-colors"><i data-lucide="users" class="w-5 h-5 text-emerald-600"></i></div>
-                            <div>
-                                <strong class="text-gray-900 dark:text-white block text-sm mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Catadores e Cidades (Dias, 2016)</strong>
-                                <span class="text-xs text-gray-500">Environment and Urbanization. Estudo aprofundado sobre o papel vital e a formalização de trabalhadores.</span>
-                            </div>
-                        </a>
                         <a href="https://www.sciencedirect.com/journal/journal-of-hazardous-materials" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 group hover:border-purple-400 dark:hover:border-purple-500">
                             <div class="bg-purple-50 dark:bg-purple-900/20 p-2 rounded-lg group-hover:bg-purple-100 dark:group-hover:bg-purple-900/40 transition-colors"><i data-lucide="flask-conical" class="w-5 h-5 text-purple-600"></i></div>
                             <div>
@@ -428,103 +395,309 @@
             </div>
         </section>
 
-        <!-- SECÇÃO: TEMA 5 (Empreendedorismo Verde) -->
+        <!-- ========================================== -->
+        <!-- SECÇÃO: TEMA 5 (EMPREENDEDORISMO VERDE)    -->
+        <!-- ========================================== -->
         <section id="view-tema5" class="hidden-section space-y-8 animate-fade-in max-w-5xl mx-auto">
             <button onclick="navigateTo('home')" class="flex items-center text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mb-2 bg-white/50 dark:bg-gray-800/50 py-2 px-4 rounded-full shadow-sm w-max backdrop-blur-md">
+                <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Voltar para a Síntese Inicial
+            </button>
+
+            <div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg p-8 md:p-10 rounded-3xl shadow-2xl border border-white/50 dark:border-gray-700/50">
+
+                <!-- HEADER DO TEMA -->
+                <header class="border-b border-gray-200 dark:border-gray-700 pb-8 mb-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-4 py-1.5 text-xs font-black uppercase tracking-widest bg-gradient-to-r from-emerald-400 to-green-600 text-white rounded-full shadow-md">Tema 5</span>
+                        <span class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Inclusão Produtiva & Negócios</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight">
+                        A Prática do <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Empreendedorismo Verde</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 mt-6 leading-relaxed max-w-3xl">
+                        A gestão de REEE deixou de ser um passivo ambiental para se consolidar como uma fronteira de oportunidades. Conheça os modelos de negócios que unem sustentabilidade, inclusão social e eficiência logística.
+                    </p>
+                </header>
+
+                <!-- ÁREA RESERVADA PARA VÍDEO -->
+                <div class="relative p-2 rounded-2xl bg-gradient-to-tr from-emerald-300 via-green-200 to-teal-300 dark:from-emerald-900 dark:via-green-800 dark:to-teal-900 shadow-xl my-8 group cursor-pointer overflow-hidden">
+                    <div class="w-full aspect-video bg-white/80 dark:bg-gray-900/80 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-emerald-400/50 shadow-inner">
+                        <i data-lucide="video" class="w-16 h-16 text-emerald-500 mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                        <h3 class="text-lg font-bold text-gray-700 dark:text-gray-300 px-4 text-center">
+                            Área reservada para o vídeo:<br><span class="text-emerald-600 dark:text-emerald-400">Empreendedorismo Verde</span>
+                        </h3>
+                        <p class="text-sm text-gray-500 mt-2 text-center px-4 font-medium">
+                            (Substitua esta div pela tag &lt;video src="video/Do_Lixo_Eletronico_a_oportunidade.mp4"&gt;)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 1. A MUDANÇA DE PARADIGMA -->
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-6 flex items-center gap-3">
+                    <div class="p-2 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg"><i data-lucide="refresh-cw" class="text-emerald-600 dark:text-emerald-400 w-6 h-6"></i></div>
+                    A Mudança de Paradigma: Formalização do Setor
+                </h3>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+                    Historicamente, a extração de valor do lixo eletrônico em comunidades vulneráveis ocorreu pela força bruta, configurando o que se chama de "garimpo tóxico". A Organização Mundial da Saúde (OMS) destaca que essa atividade informal representa severos riscos ocupacionais e ambientais. O novo empreendedorismo verde atua exatamente na substituição dessas práticas por processos formais e seguros.
+                </p>
+
+                <!-- Comparativo Visual -->
+                <div class="grid md:grid-cols-2 gap-0 border border-gray-200 dark:border-gray-700 rounded-3xl overflow-hidden shadow-lg mb-14">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/40 dark:to-red-900/20 p-8">
+                        <div class="bg-red-200 dark:bg-red-900/50 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="flame" class="w-6 h-6 text-red-600 dark:text-red-400"></i></div>
+                        <h4 class="text-xl font-bold text-red-800 dark:text-red-400 mb-4">O Passado: "Garimpo Tóxico"</h4>
+                        <ul class="space-y-4 text-sm text-gray-800 dark:text-gray-300">
+                            <li class="flex gap-3 items-start"><i data-lucide="x-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i> <span><strong>Queima aberta de cabos</strong> para extrair cobre, gerando fumaça altamente cancerígena.</span></li>
+                            <li class="flex gap-3 items-start"><i data-lucide="x-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i> <span><strong>Armazenamento inadequado</strong> e banhos químicos (ácidos) em fundos de quintal sem tratamento de efluentes.</span></li>
+                            <li class="flex gap-3 items-start"><i data-lucide="x-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i> <span>Exposição de trabalhadores informais sem controle técnico a <strong>metais pesados (chumbo/mercúrio)</strong>.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/40 dark:to-teal-900/20 p-8 border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-700">
+                        <div class="bg-emerald-200 dark:bg-emerald-900/50 w-12 h-12 rounded-full flex items-center justify-center mb-4"><i data-lucide="shield-check" class="w-6 h-6 text-emerald-600 dark:text-emerald-400"></i></div>
+                        <h4 class="text-xl font-bold text-emerald-800 dark:text-emerald-400 mb-4">O Futuro: Mineração Urbana Segura</h4>
+                        <ul class="space-y-4 text-sm text-gray-800 dark:text-gray-300">
+                            <li class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"></i> <span><strong>Desmontagem técnica</strong> em galpões licenciados e infraestrutura apropriada.</span></li>
+                            <li class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"></i> <span>Uso rigoroso de <strong>EPIs, triagem inteligente e logística reversa controlada</strong>.</span></li>
+                            <li class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"></i> <span>Garantia de proteção de dados, rastreabilidade e <strong>inclusão produtiva</strong> dos catadores no mercado formal.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. OS 4 MODELOS DE NEGÓCIO -->
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-2">Os Modelos de Negócios Comunitários e Sustentáveis</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-8">As comunidades e startups se organizam em diferentes modelos operacionais, transformando um risco socioambiental em cadeias de valor (Economia Circular):</p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-14">
+                    <!-- Modelo 1 -->
+                    <div class="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm p-6 rounded-2xl border border-emerald-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="bg-emerald-100 dark:bg-emerald-900/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="users" class="w-6 h-6 text-emerald-600 dark:text-emerald-400"></i></div>
+                        <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">1. Cooperativas Especializadas (Triagem Avançada)</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">As cooperativas evoluíram. Elas agora operam sob requisitos rigorosos (como a norma <strong>ABNT NBR 16156:2013</strong>) para a manufatura reversa.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"><strong>Receita:</strong> Venda qualificada de frações puras (placas, fios, carcaças) para a indústria de transformação.</p>
+                    </div>
+
+                    <!-- Modelo 2 -->
+                    <div class="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm p-6 rounded-2xl border border-emerald-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="bg-teal-100 dark:bg-teal-900/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="wrench" class="w-6 h-6 text-teal-600 dark:text-teal-400"></i></div>
+                        <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">2. Recondicionamento e Upcycling (Extensão de Vida Útil)</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">Modelos focados no reparo e substituição de peças de equipamentos descartados precocemente, reduzindo a necessidade de nova mineração.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"><strong>Impacto:</strong> Promove a reinserção de eletrônicos no mercado a preços acessíveis, gerando inclusão digital.</p>
+                    </div>
+
+                    <!-- Modelo 3 -->
+                    <div class="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm p-6 rounded-2xl border border-emerald-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="bg-green-100 dark:bg-green-900/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="map-pin" class="w-6 h-6 text-green-600 dark:text-green-400"></i></div>
+                        <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2">3. Hubs Comunitários de Logística (B2B/B2C)</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">Atuam como pontos primários de consolidação de volume (PEVs) em bairros ou empresas, resolvendo o complexo problema de capilaridade logística das grandes marcas.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"><strong>Receita:</strong> Remuneração pela prestação de serviço de coleta e transporte para a entidade gestora.</p>
+                    </div>
+
+                    <!-- Modelo 4 -->
+                    <div class="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm p-6 rounded-2xl border border-emerald-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+                        <div class="absolute top-4 right-4 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-400 text-xs font-bold px-3 py-1 rounded-full border border-yellow-200 dark:border-yellow-800 shadow-sm">Segurança</div>
+                        <div class="bg-emerald-100 dark:bg-emerald-900/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4"><i data-lucide="shield" class="w-6 h-6 text-emerald-600 dark:text-emerald-400"></i></div>
+                        <h4 class="font-bold text-gray-900 dark:text-white text-lg mb-2 w-4/5">4. Destruição Segura de Dados (Conformidade LGPD)</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">O lixo corporativo não é apenas carcaça, contém dados sigilosos. Empresas verdes oferecem inventário e apagamento físico (trituração) de discos rígidos e mídias.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"><strong>Impacto:</strong> Articula o descarte ecológico com a mitigação de riscos jurídicos das corporações.</p>
+                    </div>
+                </div>
+
+                <!-- 3. DASHBOARD DE GOVERNANÇA (ESG) -->
+                <div class="bg-gray-900 rounded-3xl p-8 md:p-10 shadow-2xl text-white mb-14 relative overflow-hidden">
+                    <div class="absolute right-0 top-0 w-64 h-64 bg-emerald-500 rounded-full mix-blend-screen filter blur-[80px] opacity-20"></div>
+
+                    <h3 class="text-2xl font-bold mb-2 flex items-center gap-3 relative z-10">
+                        <i data-lucide="line-chart" class="text-emerald-400 w-7 h-7"></i> Governança, Indicadores e Rastreabilidade
+                    </h3>
+                    <p class="text-gray-400 mb-8 relative z-10 text-lg">Para que as empresas geradoras de resíduos invistam nas cooperativas (cumprindo a PNRS e a Responsabilidade Estendida do Produtor), a transparência é inegociável. O setor adotou pilares rígidos de ESG:</p>
+
+                    <div class="grid md:grid-cols-3 gap-6 relative z-10">
+                        <div class="bg-gray-800/80 border border-gray-700 p-5 rounded-2xl">
+                            <i data-lucide="link-2" class="text-blue-400 mb-3 w-6 h-6"></i>
+                            <h5 class="font-bold text-white mb-2">Sistemas de Rastreabilidade</h5>
+                            <p class="text-sm text-gray-400">Softwares de cadeia de suprimentos garantem que o lote recebido seja integralmente processado e destinado corretamente, impedindo desvios para o mercado informal poluente.</p>
+                        </div>
+                        <div class="bg-gray-800/80 border border-gray-700 p-5 rounded-2xl">
+                            <i data-lucide="activity" class="text-emerald-400 mb-3 w-6 h-6"></i>
+                            <h5 class="font-bold text-white mb-2">Avaliação de Ciclo de Vida (ACV)</h5>
+                            <p class="text-sm text-gray-400">Seguindo metodologias como a <strong>ISO 14040:2006</strong>, as empresas medem o impacto ambiental evitado (ex: emissões de GEE reduzidas e recursos hídricos poupados) pelo descarte correto.</p>
+                        </div>
+                        <div class="bg-gray-800/80 border border-gray-700 p-5 rounded-2xl">
+                            <i data-lucide="pie-chart" class="text-purple-400 mb-3 w-6 h-6"></i>
+                            <h5 class="font-bold text-white mb-2">Indicadores Sociais Sólidos</h5>
+                            <p class="text-sm text-gray-400">O impacto "S" do ESG. Relatórios que demonstram o número de empregos formais gerados, a elevação da renda comunitária e a taxa de acidentes ocupacionais (buscando sempre o Zero Acidente).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. DESAFIOS PARA EXPANSÃO (Gráfico) -->
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-6 flex items-center gap-3">
+                    <div class="p-2 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg"><i data-lucide="alert-triangle" class="text-emerald-600 dark:text-emerald-400 w-6 h-6"></i></div>
+                    Barreiras e Desafios para a Expansão
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-8 text-lg">A escalabilidade das iniciativas de Empreendedorismo Verde esbarra em obstáculos estruturais e operacionais:</p>
+
+                <div class="bg-gray-50 dark:bg-gray-800/40 p-6 md:p-8 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-inner mb-12">
+                    <div class="space-y-6 max-w-4xl mx-auto">
+                        <!-- Burocracia -->
+                        <div class="group">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">1. Complexidade Burocrática e Custos de Licenciamento</span>
+                                <span class="text-sm font-bold text-red-500">Crítico</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700 overflow-hidden relative">
+                                <div class="bg-red-500 h-4 rounded-full bar-animate" style="--target-width: 90%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">A formalização como operador de resíduos perigosos exige capital inicial elevado e processos demorados nos órgãos ambientais.</p>
+                        </div>
+                        <!-- Infraestrutura -->
+                        <div class="group">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">2. Déficit de Infraestrutura e Logística</span>
+                                <span class="text-sm font-bold text-orange-500">Muito Alto</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700 overflow-hidden relative">
+                                <div class="bg-orange-500 h-4 rounded-full bar-animate" style="--target-width: 85%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Espaço físico adequado (piso impermeável, prevenção de incêndio) e transporte seguro são caros, dificultando a coleta descentralizada.</p>
+                        </div>
+                        <!-- Capacitação -->
+                        <div class="group">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">3. Volatilidade de Preços e Concorrência Desleal</span>
+                                <span class="text-sm font-bold text-yellow-500">Alto</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700 overflow-hidden relative">
+                                <div class="bg-yellow-400 h-4 rounded-full bar-animate" style="--target-width: 75%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">A rentabilidade é atrelada à cotação dos metais nas bolsas (commodities). Além disso, o setor formal sofre concorrência de sucateiros informais que não arcam com custos ambientais.</p>
+                        </div>
+                        <!-- Educacao -->
+                        <div class="group">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200">4. Necessidade Contínua de Capacitação Tecnológica</span>
+                                <span class="text-sm font-bold text-emerald-500">Moderado a Alto</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700 overflow-hidden relative">
+                                <div class="bg-emerald-500 h-4 rounded-full bar-animate" style="--target-width: 65%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">A constante mudança no design dos equipamentos e a miniaturização exigem que as cooperativas se atualizem constantemente para não perderem eficiência.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. O ECOSSISTEMA DE APOIO -->
+                <div class="bg-emerald-50 dark:bg-emerald-900/10 p-6 md:p-8 rounded-3xl border border-emerald-100 dark:border-emerald-900/30 mb-12">
+                    <h4 class="font-bold text-xl text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        <i data-lucide="handshake" class="text-emerald-600 dark:text-emerald-400"></i> A Força do Ecossistema Institucional
+                    </h4>
+                    <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-4">
+                        A superação desses desafios não ocorre isoladamente. O sucesso do Empreendedorismo Verde em REEE depende intrinsecamente da articulação de um forte ecossistema de apoio:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+                        <li><strong>Estado:</strong> Fornecimento de subsídios, desburocratização de licenças para cooperativas e fiscalização contra o mercado paralelo e aterros clandestinos.</li>
+                        <li><strong>Iniciativa Privada e Entidades Gestoras:</strong> Investimento direto em infraestrutura para os pontos de coleta e garantia de demanda contínua (contratos de longo prazo) para as cooperativas parceiras.</li>
+                        <li><strong>Sistema S (SEBRAE, SENAI) e Universidades:</strong> Suporte técnico vital para a formação em gestão empresarial, treinamento em manufatura reversa e inovação em processos de segurança do trabalho.</li>
+                    </ul>
+                </div>
+
+                <!-- 6. REFERÊNCIAS EXTERNAS TEMA 5 -->
+                <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="external-link" class="w-5 h-5 text-gray-500"></i> Continue Explorando o Tema
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <a href="https://sebrae.com.br/sites/PortalSebrae/sustentabilidade" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 group hover:border-emerald-400 dark:hover:border-emerald-500">
+                            <div class="bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded-lg group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/40 transition-colors"><i data-lucide="briefcase" class="w-5 h-5 text-emerald-600"></i></div>
+                            <div>
+                                <strong class="text-gray-900 dark:text-white block text-sm mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">SEBRAE - Negócios Sustentáveis</strong>
+                                <span class="text-xs text-gray-500">Orientações sobre empreendedorismo verde, gestão de resíduos sólidos e legalização.</span>
+                            </div>
+                        </a>
+                        <a href="https://www.ellenmacarthurfoundation.org/circular-economy-principles" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 group hover:border-blue-400 dark:hover:border-blue-500">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 p-2 rounded-lg group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors"><i data-lucide="refresh-cw" class="w-5 h-5 text-blue-600"></i></div>
+                            <div>
+                                <strong class="text-gray-900 dark:text-white block text-sm mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Fundação Ellen MacArthur</strong>
+                                <span class="text-xs text-gray-500">Os princípios fundamentais da Economia Circular e a eliminação do conceito de lixo.</span>
+                            </div>
+                        </a>
+                        <a href="https://www.iso.org/standard/37456.html" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 group hover:border-indigo-400 dark:hover:border-indigo-500">
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 p-2 rounded-lg group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/40 transition-colors"><i data-lucide="award" class="w-5 h-5 text-indigo-600"></i></div>
+                            <div>
+                                <strong class="text-gray-900 dark:text-white block text-sm mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Norma ISO 14040:2006 (ACV)</strong>
+                                <span class="text-xs text-gray-500">Gestão ambiental, Princípios e estrutura para a Avaliação do Ciclo de Vida (Indicadores ESG).</span>
+                            </div>
+                        </a>
+                        <a href="https://www.abntcatalogo.com.br/norma.aspx?ID=305101" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-700 group hover:border-orange-400 dark:hover:border-orange-500">
+                            <div class="bg-orange-50 dark:bg-orange-900/20 p-2 rounded-lg group-hover:bg-orange-100 dark:group-hover:bg-orange-900/40 transition-colors"><i data-lucide="file-text" class="w-5 h-5 text-orange-600"></i></div>
+                            <div>
+                                <strong class="text-gray-900 dark:text-white block text-sm mb-1 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">ABNT NBR 16156:2013</strong>
+                                <span class="text-xs text-gray-500">A norma brasileira oficial que regula a Manufatura Reversa e a proteção ocupacional em REEE.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECÇÃO: TEMA 6 (POLÍTICAS E LEIS)          -->
+        <!-- ========================================== -->
+        <section id="view-tema6" class="hidden-section space-y-8 animate-fade-in max-w-5xl mx-auto">
+            <button onclick="navigateTo('home')" class="flex items-center text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors mb-2 bg-white/50 dark:bg-gray-800/50 py-2 px-4 rounded-full shadow-sm w-max backdrop-blur-md">
                 <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Voltar para a Síntese Inicial
             </button>
 
             <div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg p-8 md:p-10 rounded-3xl shadow-xl border border-white/50 dark:border-gray-700/50">
                 <header class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-6">
                     <div class="flex items-center gap-3 mb-3">
-                        <span class="px-4 py-1.5 text-xs font-black uppercase tracking-widest bg-gradient-to-r from-emerald-400 to-green-500 text-white rounded-full shadow-md">Tema 5</span>
+                        <span class="px-4 py-1.5 text-xs font-black uppercase tracking-widest bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-full shadow-md">Tema 6</span>
                     </div>
                     <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-                        A Prática do Empreendedorismo Verde
+                        Políticas e Marcos Legais no Brasil
                     </h1>
                     <p class="text-xl text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                        Enquanto a tecnologia processa o material no fim da linha, startups e cooperativas criam a ponte inteligente para fazer o lixo chegar até lá, gerando lucro e resolvendo o problema de quem descarta.
+                        Como as leis orientam o descarte tecnológico, definem as responsabilidades e promovem a sustentabilidade.
                     </p>
                 </header>
 
-                <article class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed space-y-6">
-                    <p>O Empreendedorismo Verde no setor de Lixo Eletrônico não se resume às grandes plantas químicas. Ele floresce abundantemente em soluções logísticas, reparo e reinserção de aparelhos no mercado, formando as veias da economia circular.</p>
+                <div class="relative p-2 rounded-2xl bg-gradient-to-tr from-blue-300 via-indigo-200 to-cyan-300 dark:from-blue-900 dark:via-indigo-800 dark:to-cyan-900 shadow-xl my-8 group cursor-pointer overflow-hidden">
+                    <div class="w-full aspect-video bg-white/80 dark:bg-gray-900/80 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-blue-400/50 shadow-inner">
+                        <i data-lucide="video" class="w-16 h-16 text-blue-500 mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                        <h3 class="text-lg font-bold text-gray-700 dark:text-gray-300 px-4 text-center">
+                            Área reservada para o vídeo:<br><span class="text-blue-600 dark:text-blue-400">Leis do Lixo Eletrônico</span>
+                        </h3>
+                    </div>
+                </div>
 
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-6">Oportunidades de Negócio em Destaque</h3>
-                    <div class="grid sm:grid-cols-2 gap-6 mt-6">
-                        <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-2xl border border-emerald-100 dark:border-emerald-900/50 shadow-sm">
-                            <div class="flex items-center gap-2 mb-3">
-                                <i data-lucide="smartphone" class="w-5 h-5 text-emerald-500"></i>
-                                <h4 class="font-bold text-gray-900 dark:text-white">Startups de "Refurbished" (Recondicionados)</h4>
+                <article class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed space-y-6">
+                    <p>O Brasil enfrenta o imenso desafio de gerir a rápida obsolescência dos aparelhos tecnológicos. A resolução para este problema exige mais do que iniciativas isoladas; exige <strong>Políticas Públicas</strong> robustas.</p>
+
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-10">O Marco Legal: PNRS (Lei nº 12.305/2010)</h3>
+                    <div class="grid gap-4 mt-6">
+                        <div class="flex items-start gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-700">
+                            <div class="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-lg mt-1"><i data-lucide="users" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i></div>
+                            <div>
+                                <strong class="text-gray-900 dark:text-white block">Responsabilidade Compartilhada</strong>
+                                <p class="text-base text-gray-600 dark:text-gray-400 mt-1">O ciclo de vida de um produto é responsabilidade de todos — fabricante, importador, comerciante e consumidor.</p>
                             </div>
-                            <p class="text-base text-gray-600 dark:text-gray-400">Aparelhos com pequenos defeitos são comprados baratos, consertados por especialistas, higienizados e revendidos com garantia. O mercado de celulares e notebooks "semi-novos" movimenta bilhões anualmente, democratizando o acesso tecnológico.</p>
                         </div>
-                        <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-2xl border border-emerald-100 dark:border-emerald-900/50 shadow-sm">
-                            <div class="flex items-center gap-2 mb-3">
-                                <i data-lucide="truck" class="w-5 h-5 text-emerald-500"></i>
-                                <h4 class="font-bold text-gray-900 dark:text-white">Plataformas de Conexão B2B e B2C</h4>
+                        <div class="flex items-start gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-700">
+                            <div class="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-lg mt-1"><i data-lucide="refresh-cw" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i></div>
+                            <div>
+                                <strong class="text-gray-900 dark:text-white block">Logística Reversa</strong>
+                                <p class="text-base text-gray-600 dark:text-gray-400 mt-1">Garantia de um fluxo físico para que os produtos descartados retornem às indústrias (Decreto nº 10.240/2020).</p>
                             </div>
-                            <p class="text-base text-gray-600 dark:text-gray-400">Aplicativos que conectam o cidadão (que tem um celular parado na gaveta) ou uma empresa (renovando computadores) aos centros de triagem credenciados, gerando rotas otimizadas e certificados de descarte ecológico exigidos por lei.</p>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- SECÇÃO: TEMA 6 (Políticas e Leis) -->
-        <section id="view-tema6" class="hidden-section space-y-8 animate-fade-in bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg p-6 md:p-10 rounded-3xl shadow-xl border border-white/50 dark:border-gray-700/50 max-w-4xl mx-auto">
-            <button onclick="navigateTo('home')" class="flex items-center text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors mb-6 bg-white/50 dark:bg-gray-800/50 py-2 px-4 rounded-full shadow-sm w-max">
-                <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Voltar para a Síntese Inicial
-            </button>
-
-            <header class="border-b border-gray-200 dark:border-gray-700 pb-6">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="px-4 py-1.5 text-xs font-black uppercase tracking-widest bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-full shadow-md">Tema 6</span>
-                </div>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-                    Políticas e Marcos Legais no Brasil
-                </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-                    Como as leis orientam o descarte tecnológico, definem as responsabilidades e promovem a sustentabilidade.
-                </p>
-            </header>
-
-            <div class="relative p-2 rounded-2xl bg-gradient-to-tr from-blue-300 via-indigo-200 to-cyan-300 dark:from-blue-900 dark:via-indigo-800 dark:to-cyan-900 shadow-xl my-8 group cursor-pointer overflow-hidden">
-                <div class="w-full aspect-video bg-white/80 dark:bg-gray-900/80 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-blue-400/50 shadow-inner">
-                    <i data-lucide="video" class="w-16 h-16 text-blue-500 mb-4 group-hover:scale-110 transition-transform duration-300"></i>
-                    <h3 class="text-lg font-bold text-gray-700 dark:text-gray-300 px-4 text-center">
-                        Área reservada para o vídeo:<br><span class="text-blue-600 dark:text-blue-400">Leis do Lixo Eletrônico</span>
-                    </h3>
-                </div>
-            </div>
-
-            <article class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed space-y-6">
-                <p>O Brasil enfrenta o imenso desafio de gerir a rápida obsolescência dos aparelhos tecnológicos. A resolução para este problema exige mais do que iniciativas isoladas; exige <strong>Políticas Públicas</strong> robustas.</p>
-
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-10">O Marco Legal: PNRS (Lei nº 12.305/2010)</h3>
-                <div class="grid gap-4 mt-6">
-                    <div class="flex items-start gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-700">
-                        <div class="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-lg mt-1"><i data-lucide="users" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i></div>
-                        <div>
-                            <strong class="text-gray-900 dark:text-white block">Responsabilidade Compartilhada</strong>
-                            <p class="text-base text-gray-600 dark:text-gray-400 mt-1">O ciclo de vida de um produto é responsabilidade de todos — fabricante, importador, comerciante e consumidor.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-700">
-                        <div class="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-lg mt-1"><i data-lucide="refresh-cw" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i></div>
-                        <div>
-                            <strong class="text-gray-900 dark:text-white block">Logística Reversa</strong>
-                            <p class="text-base text-gray-600 dark:text-gray-400 mt-1">Garantia de um fluxo físico para que os produtos descartados retornem às indústrias (Decreto nº 10.240/2020).</p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-white/20 dark:border-gray-800/50 bg-white/50 dark:bg-gray-950/50 backdrop-blur-md py-8 mt-12 text-center text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300">
+    <footer class="border-t border-white/20 dark:border-gray-800/50 bg-white/50 dark:bg-gray-950/50 backdrop-blur-md py-8 mt-auto text-center text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300">
         <div class="flex justify-center items-center gap-2 mb-2">
             <i data-lucide="leaf" class="w-4 h-4 text-emerald-500"></i>
             <span class="font-bold">EcoTech Brasil</span>
@@ -534,8 +707,10 @@
 
     <!-- JAVASCRIPT NATIVO (VANILLA JS) -->
     <script>
+        // Inicializa os ícones do Lucide
         lucide.createIcons();
 
+        // Para mídias ao trocar de aba
         function stopAllMedia() {
             const videos = document.querySelectorAll('video');
             videos.forEach(video => video.pause());
@@ -547,18 +722,17 @@
             });
         }
 
+        // Gatilho para recomeçar animações das barras CSS
         function triggerAnimations(viewId) {
-            // Gatilho visual focado no Tema 4 agora
-            if (viewId === 'tema4') {
-                const bars = document.querySelectorAll('.bar-animate');
-                bars.forEach(bar => {
-                    bar.style.animation = 'none';
-                    bar.offsetHeight; // Trigger reflow para resetar a animação
-                    bar.style.animation = null;
-                });
-            }
+            const bars = document.querySelectorAll('#view-' + viewId + ' .bar-animate');
+            bars.forEach(bar => {
+                bar.style.animation = 'none';
+                bar.offsetHeight; // Força o reflow
+                bar.style.animation = null;
+            });
         }
 
+        // Navegação SPA
         function navigateTo(viewId) {
             stopAllMedia();
 
@@ -569,20 +743,22 @@
                 if (element) element.classList.add('hidden-section');
             });
 
+            // Reseta botões do menu superior
             const navButtons = document.querySelectorAll('.nav-btn');
             navButtons.forEach(btn => {
                 btn.classList.remove('text-purple-600', 'dark:text-purple-400', 'border-purple-600', 'text-emerald-600', 'dark:text-emerald-400', 'border-emerald-600', 'text-blue-600', 'dark:text-blue-400', 'border-blue-600');
                 btn.classList.add('text-gray-600', 'dark:text-gray-300', 'border-transparent');
             });
 
+            // Mostra seção alvo
             const targetView = document.getElementById('view-' + viewId);
             if (targetView) targetView.classList.remove('hidden-section');
 
+            // Marca o botão ativo com a cor do tema correspondente
             const activeBtn = document.getElementById('nav-' + viewId);
             if (activeBtn) {
                 activeBtn.classList.remove('text-gray-600', 'dark:text-gray-300', 'border-transparent');
 
-                // Aplica as cores corretas baseado no tema selecionado
                 if (viewId === 'tema4') {
                     activeBtn.classList.add('text-purple-600', 'dark:text-purple-400', 'border-purple-600');
                 } else if (viewId === 'tema5' || viewId === 'home') {
@@ -596,6 +772,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Dark Mode Toggle
         let isDarkMode = false;
 
         function toggleDarkMode() {
@@ -616,6 +793,7 @@
             }
         }
 
+        // Verifica a preferência do sistema operacional
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             toggleDarkMode();
         }
