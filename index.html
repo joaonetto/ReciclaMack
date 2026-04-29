@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoTech Brasil - Lixo Eletrônico e Sustentabilidade</title>
+    <title>RecliclaMack - Lixo Eletrônico e Sustentabilidade</title>
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -93,7 +93,7 @@
                 <div class="bg-gradient-to-br from-emerald-400 to-green-600 p-1.5 rounded-lg shadow-md">
                     <i data-lucide="recycle" class="w-6 h-6 text-white"></i>
                 </div>
-                <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white">EcoTech <span class="text-emerald-600 dark:text-emerald-400">Brasil</span></span>
+                <span class="font-bold text-xl tracking-tight text-gray-900 dark:text-white">Reclicla<span class="text-emerald-600 dark:text-emerald-400">Mack</span></span>
             </div>
 
             <nav class="hidden md:flex gap-6 overflow-x-auto">
@@ -110,8 +110,8 @@
         </div>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="max-w-5xl mx-auto px-4 py-8 md:py-12 min-h-[80vh]">
+    <!-- CONTEÚDO PRINCIPAL (Adicionado pb-32 para compensar o rodapé fixo) -->
+    <main class="max-w-5xl mx-auto px-4 pt-8 pb-32 md:pt-12 md:pb-32 min-h-[80vh]">
 
         <!-- ========================================== -->
         <!-- SECÇÃO: HOME -->
@@ -193,8 +193,9 @@
             <!-- HEADER -->
             <div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg p-8 md:p-10 rounded-3xl shadow-xl border border-white/50 dark:border-gray-700/50">
                 <header class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-6">
-                    <div class="flex items-center gap-3 mb-3">
+                    <div class="flex items-center gap-3 mb-4">
                         <span class="px-4 py-1.5 text-xs font-black uppercase tracking-widest bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white rounded-full shadow-md">Tema 4</span>
+                        <span class="text-sm font-semibold text-purple-600 dark:text-purple-400">Inovação & Mineração Urbana</span>
                     </div>
                     <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
                         Tecnologias Sustentáveis Aplicadas aos REEE
@@ -419,17 +420,16 @@
                     </p>
                 </header>
 
-                <!-- ÁREA RESERVADA PARA VÍDEO -->
-                <div class="relative p-2 rounded-2xl bg-gradient-to-tr from-emerald-300 via-green-200 to-teal-300 dark:from-emerald-900 dark:via-green-800 dark:to-teal-900 shadow-xl my-8 group cursor-pointer overflow-hidden">
-                    <div class="w-full aspect-video bg-white/80 dark:bg-gray-900/80 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-emerald-400/50 shadow-inner">
-                        <i data-lucide="video" class="w-16 h-16 text-emerald-500 mb-4 group-hover:scale-110 transition-transform duration-300"></i>
-                        <h3 class="text-lg font-bold text-gray-700 dark:text-gray-300 px-4 text-center">
-                            Área reservada para o vídeo:<br><span class="text-emerald-600 dark:text-emerald-400">Empreendedorismo Verde</span>
-                        </h3>
-                        <p class="text-sm text-gray-500 mt-2 text-center px-4 font-medium">
-                            (Substitua esta div pela tag &lt;video src="video/Do_Lixo_Eletronico_a_oportunidade.mp4"&gt;)
-                        </p>
-                    </div>
+                <!-- VÍDEO YOUTUBE -->
+                <div class="relative p-2 rounded-2xl bg-gradient-to-tr from-purple-300 via-fuchsia-200 to-pink-300 dark:from-purple-900 dark:via-fuchsia-800 dark:to-pink-900 shadow-xl my-8 overflow-hidden">
+                    <iframe
+                        class="w-full aspect-video rounded-xl shadow-inner bg-black"
+                        src="https://www.youtube.com/embed/JuMyOejRBDU"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                 </div>
 
                 <!-- 1. A MUDANÇA DE PARADIGMA -->
@@ -664,17 +664,16 @@
                     </p>
                 </header>
 
-                <!-- VÍDEO -->
-                <div class="relative p-2 rounded-2xl bg-gradient-to-tr from-blue-300 via-indigo-200 to-cyan-300 dark:from-blue-900 dark:via-indigo-800 dark:to-cyan-900 shadow-xl my-10 overflow-hidden group">
-                    <div class="w-full aspect-video bg-white/80 dark:bg-gray-900/80 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-blue-400/50 shadow-inner">
-                        <i data-lucide="video" class="w-16 h-16 text-blue-500 mb-4 group-hover:scale-110 transition-transform duration-300"></i>
-                        <h3 class="text-lg font-bold text-gray-700 dark:text-gray-300 px-4 text-center">
-                            Área reservada para o vídeo:<br><span class="text-blue-600 dark:text-blue-400">Políticas e Leis do Lixo Eletrônico</span>
-                        </h3>
-                        <p class="text-sm text-gray-500 mt-2 text-center px-4 font-medium">
-                            (Substitua esta div pela tag &lt;video src="..."&gt;)
-                        </p>
-                    </div>
+                <!-- VÍDEO YOUTUBE -->
+                <div class="relative p-2 rounded-2xl bg-gradient-to-tr from-purple-300 via-fuchsia-200 to-pink-300 dark:from-purple-900 dark:via-fuchsia-800 dark:to-pink-900 shadow-xl my-8 overflow-hidden">
+                    <iframe
+                        class="w-full aspect-video rounded-xl shadow-inner bg-black"
+                        src="https://www.youtube.com/embed/MB851CfnJWo"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                 </div>
 
                 <!-- 1. O MARCO REGULATÓRIO (PNRS) -->
@@ -854,12 +853,12 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-white/20 dark:border-gray-800/50 bg-white/50 dark:bg-gray-950/50 backdrop-blur-md py-8 mt-auto text-center text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300">
-        <div class="flex justify-center items-center gap-2 mb-2">
+    <footer class="fixed bottom-0 left-0 right-0 z-40 border-t border-white/20 dark:border-gray-800/50 bg-white/70 dark:bg-gray-950/70 backdrop-blur-md py-4 text-center text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300">
+        <div class="flex justify-center items-center gap-2 mb-1">
             <i data-lucide="leaf" class="w-4 h-4 text-emerald-500"></i>
-            <span class="font-bold">EcoTech Brasil</span>
+            <span class="font-bold">RecliclaMack</span>
         </div>
-        <p>© 2026. Baseado na pesquisa sobre Gestão de REEE, PNRS e Economia Circular.</p>
+        <p>© 2026. Projeto de Extensão Mackenzie.</p>
     </footer>
 
     <!-- JAVASCRIPT NATIVO (VANILLA JS) -->
