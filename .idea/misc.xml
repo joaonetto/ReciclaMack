@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SshConfigs">
-    <configs>
-      <sshConfig host="ec2-52-90-19-178.compute-1.amazonaws.com" id="afe8a20d-74ef-4c46-9dd9-762cf662ac02" keyPath="$USER_HOME$/.ssh/chaveTesteMongoDB.pem" port="22" nameFormat="DESCRIPTIVE" username="ec2-user" useOpenSSHConfig="true" />
-    </configs>
-  </component>
-</project>
