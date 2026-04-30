@@ -101,6 +101,7 @@
                 <button id="nav-tema4" onclick="navigateTo('tema4')" class="nav-btn font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 pb-1 border-b-2 border-transparent whitespace-nowrap">Tecnologias Sustentáveis</button>
                 <button id="nav-tema5" onclick="navigateTo('tema5')" class="nav-btn font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 pb-1 border-b-2 border-transparent whitespace-nowrap">Empreendedorismo Verde</button>
                 <button id="nav-tema6" onclick="navigateTo('tema6')" class="nav-btn font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 pb-1 border-b-2 border-transparent whitespace-nowrap">Políticas e Leis</button>
+                <button id="nav-about" onclick="navigateTo('about')" class="nav-btn font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 pb-1 border-b-2 border-transparent whitespace-nowrap">Quem somos</button>
             </nav>
 
             <button onclick="toggleDarkMode()" class="p-2.5 rounded-full bg-white/50 dark:bg-gray-800/50 backdrop-blur-md hover:bg-white/80 dark:hover:bg-gray-700/80 transition-colors shadow-sm border border-gray-200 dark:border-gray-700 flex items-center justify-center shrink-0" aria-label="Alternar tema escuro">
@@ -180,12 +181,12 @@
                 </div>
             </div>
 
-            <!-- Botões de Acesso aos Temas -->
+            <!-- Botões de Acesso aos Temas e Quem Somos -->
             <div class="text-center mt-12 mb-4">
                 <h3 class="text-xl font-bold text-gray-700 dark:text-gray-300">Navegue pelos módulos do nosso projeto:</h3>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 gap-6">
                 <!-- CARD TEMA 4 -->
                 <button onclick="navigateTo('tema4')" class="group relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/50 dark:border-gray-700/50 text-left overflow-hidden cursor-pointer flex flex-col h-full ring-2 ring-transparent hover:ring-purple-400/50">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-purple-200/50 dark:bg-purple-800/30 rounded-bl-full transition-transform group-hover:scale-110"></div>
@@ -217,6 +218,17 @@
                         <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm">Conheça o marco regulatório brasileiro (PNRS), logística reversa e seus gargalos.</p>
                     </div>
                     <div class="flex items-center text-blue-600 dark:text-blue-400 font-bold group-hover:translate-x-2 transition-transform mt-auto">Acessar Módulo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i></div>
+                </button>
+
+                <!-- CARD QUEM SOMOS -->
+                <button onclick="navigateTo('about')" class="group relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/50 dark:border-gray-700/50 text-left overflow-hidden cursor-pointer flex flex-col h-full ring-2 ring-transparent hover:ring-indigo-400/50">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-200/50 dark:bg-indigo-800/30 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10 flex-grow">
+                        <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 rounded-2xl flex items-center justify-center mb-6 shadow-inner"><i data-lucide="users" class="w-8 h-8 text-indigo-600 dark:text-indigo-400"></i></div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Quem somos</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm">Conheça a equipe de autores e as motivações por trás deste projeto de extensão.</p>
+                    </div>
+                    <div class="flex items-center text-indigo-600 dark:text-indigo-400 font-bold group-hover:translate-x-2 transition-transform mt-auto">Conhecer a Equipe <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i></div>
                 </button>
             </div>
         </section>
@@ -888,6 +900,119 @@
             </div>
         </section>
 
+        <!-- ========================================== -->
+        <!-- SECÇÃO: ABOUT (QUEM SOMOS)                 -->
+        <!-- ========================================== -->
+        <section id="view-about" class="hidden-section space-y-8 animate-fade-in max-w-5xl mx-auto">
+            <button onclick="navigateTo('home')" class="flex items-center text-sm font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors mb-2 bg-white/50 dark:bg-gray-800/50 py-2 px-4 rounded-full shadow-sm w-max backdrop-blur-md">
+                <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Voltar para O Projeto
+            </button>
+
+            <div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg p-8 md:p-10 rounded-3xl shadow-xl border border-white/50 dark:border-gray-700/50">
+
+                <header class="border-b border-gray-200 dark:border-gray-700 pb-6 mb-8 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                        <span class="px-4 py-1.5 text-xs font-black uppercase tracking-widest bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-full shadow-md">Sobre Nós</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight">
+                        Conheça o Propósito do <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-blue-500">RecliclaMack</span>
+                    </h1>
+                </header>
+
+                <div class="space-y-12">
+
+                    <!-- Bloco 1 -->
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <div class="bg-indigo-100 dark:bg-indigo-900/50 p-4 rounded-2xl shrink-0">
+                            <i data-lucide="recycle" class="w-8 h-8 text-indigo-600 dark:text-indigo-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">A Urgência da Reciclagem Eletrônica</h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Este projeto nasceu da necessidade premente de apresentar à sociedade a verdadeira importância da gestão de resíduos eletrônicos. Vivemos na era do hiperconsumo, onde um smartphone é trocado em poucos anos, mas os impactos dos seus componentes químicos duram séculos. Precisamos transformar a forma como descartamos o nosso futuro.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 2 -->
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <div class="bg-blue-100 dark:bg-blue-900/50 p-4 rounded-2xl shrink-0">
+                            <i data-lucide="cpu" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Tecnologia em Prol da Sociedade</h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Nosso grupo é apaixonado pelo potencial das novas tecnologias. No entanto, acreditamos firmemente que o avanço tecnológico só faz sentido se gerar benefícios tangíveis para a sociedade. Acreditamos no empreendedorismo que utiliza a robótica, a inteligência artificial e a química verde não apenas para lucrar, mas para salvar o meio ambiente e gerar empregos dignos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 3 -->
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <div class="bg-emerald-100 dark:bg-emerald-900/50 p-4 rounded-2xl shrink-0">
+                            <i data-lucide="scale" class="w-8 h-8 text-emerald-600 dark:text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Democratizando Leis e Políticas</h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Uma das nossas maiores preocupações é a barreira de informação. O Brasil possui leis excelentes (como a PNRS), mas que poucos cidadãos conhecem a fundo. Este trabalho visa democratizar esse conhecimento, para que todo indivíduo interessado possa atuar de forma consciente, cobrando responsabilidade das marcas e fazendo o descarte correto nos postos de logística reversa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Autores -->
+                <div class="mt-16 pt-10 border-t border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Conheça os Autores do Projeto</h3>
+
+                    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-full">
+                                <i data-lucide="user" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-lg">João Silveira Campos Netto</h4>
+                                <span class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded">RA: 10441670</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-full">
+                                <i data-lucide="user" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-lg">Mateus Fernandes de Araujo</h4>
+                                <span class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded">RA: 10731058</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-full">
+                                <i data-lucide="user" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-lg">Matheus Hidalgo F. Ferreira</h4>
+                                <span class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded">RA: 10390172</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4 hover:shadow-md transition-shadow">
+                            <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded-full">
+                                <i data-lucide="user" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-lg">Pedro Henrique A. Marcusso</h4>
+                                <span class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded">RA: 10737835</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <!-- FOOTER -->
@@ -932,7 +1057,8 @@
         function navigateTo(viewId) {
             stopAllMedia();
 
-            const views = ['home', 'tema4', 'tema5', 'tema6'];
+            // Adicionado 'about' na lista de views
+            const views = ['home', 'tema4', 'tema5', 'tema6', 'about'];
 
             views.forEach(id => {
                 const element = document.getElementById('view-' + id);
@@ -942,7 +1068,7 @@
             // Reseta botões do menu superior
             const navButtons = document.querySelectorAll('.nav-btn');
             navButtons.forEach(btn => {
-                btn.classList.remove('text-purple-600', 'dark:text-purple-400', 'border-purple-600', 'text-emerald-600', 'dark:text-emerald-400', 'border-emerald-600', 'text-blue-600', 'dark:text-blue-400', 'border-blue-600');
+                btn.classList.remove('text-purple-600', 'dark:text-purple-400', 'border-purple-600', 'text-emerald-600', 'dark:text-emerald-400', 'border-emerald-600', 'text-blue-600', 'dark:text-blue-400', 'border-blue-600', 'text-indigo-600', 'dark:text-indigo-400', 'border-indigo-600');
                 btn.classList.add('text-gray-600', 'dark:text-gray-300', 'border-transparent');
             });
 
@@ -963,6 +1089,8 @@
                     activeBtn.classList.add('text-blue-600', 'dark:text-blue-400', 'border-blue-600');
                 } else if (viewId === 'home') {
                     activeBtn.classList.add('text-emerald-600', 'dark:text-emerald-400', 'border-emerald-600');
+                } else if (viewId === 'about') {
+                    activeBtn.classList.add('text-indigo-600', 'dark:text-indigo-400', 'border-indigo-600');
                 }
             }
 
